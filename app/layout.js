@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html className={`w-full h-full flex flex-col overflow-hidden `} lang="en">
       <body className={`w-full h-full flex flex-col`}>
-        <div className={`flex-grow`}>{children}</div>
+        <div className={`flex-grow z-10`}>{children}</div>
         <Navigation />
       </body>
     </html>
