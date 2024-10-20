@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navigation from "./components/navigation/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,11 +20,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html className={`w-full h-full flex flex-col overflow-hidden `} lang="en">
+      <body className={`w-full h-full flex flex-col`}>
+        <div className={`flex-grow`}>{children}</div>
+        <Navigation />
       </body>
     </html>
   );
