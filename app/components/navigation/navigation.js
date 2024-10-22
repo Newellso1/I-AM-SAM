@@ -2,38 +2,39 @@
 
 import Link from "next/link";
 import NavButton from "./button";
+import NavigationLink from "./navigation-link";
 import { useState } from "react";
 
 export default function Navigation() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div
-      className={`bg-blue-300 p-2 rounded-t-lg md:p-5 h-fit text-center flex flex-col gap-2 items-center justify-center transition-all`}
+      className={` bg-blue-200/70 backdrop-blur-md p-2 rounded-t-xl md:p-6  h-fit text-center flex flex-col gap-2 items-center justify-center transition-all`}
     >
       <div className={`md:hidden flex `} onClick={() => setNavOpen(!navOpen)}>
         <NavButton navOpen={navOpen} />
       </div>
       <div
-        className={`${
+        className={`md:flex md:w-full md:justify-center ${
           navOpen ? "" : `h-0 translate-y-full`
-        } transition-all w-full items-center`}
+        } transition-all w-full items-center  `}
       >
         <ul
-          className={`md:flex flex-col ${
+          className={`md:flex flex-col items-center ${
             navOpen ? "flex" : "hidden"
-          }  md:justify-around gap-2 w-full md:flex-row`}
+          }  md:justify-around gap-2 w-full md:max-w-[60em] md:flex-row md:place-self-center md:gap-2`}
         >
-          <li>
-            <Link href="./">Home</Link>
+          <li className="w-fit">
+            <NavigationLink link="/" page="Home" />
           </li>
-          <li>
-            <Link href="./about">About</Link>
+          <li className="w-fit">
+            <NavigationLink link="/about" page="About" />
           </li>
-          <li>
-            <Link href="./projects">Projects</Link>
+          <li className="w-fit">
+            <NavigationLink link="/projects" page="Projects" />
           </li>
-          <li>
-            <Link href="./contact">Contact</Link>
+          <li className="w-fit">
+            <NavigationLink link="/contact" page="Contact" />
           </li>
         </ul>
       </div>
