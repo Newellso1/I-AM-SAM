@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import NavButton from "./button";
 import NavigationLink from "./navigation-link";
 import { useState } from "react";
@@ -9,7 +8,7 @@ export default function Navigation() {
   const [navOpen, setNavOpen] = useState(false);
   return (
     <div
-      className={` bg-blue-200/70 backdrop-blur-md p-2 rounded-t-xl md:p-6  h-fit text-center flex flex-col gap-2 items-center justify-center transition-all`}
+      className={`sticky bottom-0 bg-body-200/70 border-2 border-text backdrop-blur-md p-2 rounded-t-xl md:p-6  h-fit text-center flex flex-col gap-2 items-center justify-center transition-all`}
     >
       <div className={`md:hidden flex `} onClick={() => setNavOpen(!navOpen)}>
         <NavButton navOpen={navOpen} />

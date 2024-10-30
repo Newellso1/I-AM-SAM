@@ -3,16 +3,24 @@
 @tailwind utilities;
 
 body {
-  background: #2980b990; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c3e5080,
-    #4ab0f5
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c3e50,
-    #4ab0f5
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #fff2e5;
+  color: #272932;
+}
+
+.hero {
+  background-image: url("./images/magicstudio-art (1).jpg");
+  background-size: cover;
+}
+
+.fade-in {
+  animation: fade-in 2000ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
