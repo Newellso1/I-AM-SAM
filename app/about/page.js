@@ -1,19 +1,36 @@
+import Image from "next/image";
+import profilePicture from "@/app/images/profile-picture.png";
+import { inter } from "../layout";
+
 export default function About() {
   return (
     <div
-      className="w-dvw h-full p-4 fade-in
-    "
+      className={`${inter.className} w-dvw h-full flex flex-col gap-4 items-center p-6 fade-in`}
     >
-      <p className="md:max-w-96 md:text-2xl">
-        For the past 14 years, I have been working in the memorial masonry
-        industry where I have honed my attention to detail and craftsmanship
-        through to creating meaningful tributes for those who have lost friends
-        and family dear to them. However, my passion for technology and design
-        has led me to embark on new journey into the world of tech. I am mainly
-        self taught but have recently completed a 12 week bootcamp put on by the
-        Coders Guild which helped me cement the web development basics, since
-        finishing I have focused mainly on getting to grips with React.
-      </p>
+      <div className="border-8 border-text  rounded-full p-2">
+        <div className=" border-dashed border-8 border-text  rounded-full p-2">
+          <div>
+            <Image
+              src={profilePicture}
+              width={100}
+              height={100}
+              alt="profile picture"
+              className="rounded-full size-44"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="border-2 w-full">
+        <h2 className="text-2xl font-bold">From Headstones to HTML</h2>
+        <p className="text-lg">
+          I have spent 14 years in the memorial masonry industry, where I
+          learned to focus on detail and craftsmanship to honor loved ones. My
+          passion for technology led me to shift lanes into web development,
+          starting with a Coders Guild bootcamp that solidified my basics. Since
+          then, I've been diving into React and bringing my love for design and
+          tech together in new projects
+        </p>
+      </div>
     </div>
   );
 }
