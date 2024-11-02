@@ -6,9 +6,16 @@ import { useState } from "react";
 
 export default function Navigation() {
   const [navOpen, setNavOpen] = useState(false);
+
+  const closeNav = () => {
+    setTimeout(() => {
+      setNavOpen(false);
+    }, 200);
+  };
+
   return (
     <div
-      className={`sticky bottom-0 bg-body-200/70 border-2 border-text backdrop-blur-md p-2 rounded-t-xl md:p-6  h-fit text-center flex flex-col gap-2 items-center justify-center transition-all`}
+      className={`sticky bottom-0 bg-body border-2 border-text  p-2 rounded-t-xl md:p-6  h-fit text-center flex flex-col gap-2 items-center justify-center transition-all z-10`}
     >
       <div className={`md:hidden flex `} onClick={() => setNavOpen(!navOpen)}>
         <NavButton navOpen={navOpen} />
@@ -23,16 +30,16 @@ export default function Navigation() {
             navOpen ? "flex" : "hidden"
           }  md:justify-around gap-2 w-full md:max-w-[60em] md:flex-row md:place-self-center md:gap-2`}
         >
-          <li className="w-fit">
+          <li onClick={() => closeNav()} className="w-fit">
             <NavigationLink link="/" page="Home" />
           </li>
-          <li className="w-fit">
+          <li onClick={() => closeNav()} className="w-fit">
             <NavigationLink link="/about" page="About" />
           </li>
-          <li className="w-fit">
+          <li onClick={() => closeNav()} className="w-fit">
             <NavigationLink link="/projects" page="Projects" />
           </li>
-          <li className="w-fit">
+          <li onClick={() => closeNav()} className="w-fit">
             <NavigationLink link="/contact" page="Contact" />
           </li>
         </ul>
