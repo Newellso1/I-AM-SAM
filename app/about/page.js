@@ -25,7 +25,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="hidden md:flex md:w-4 h-full rounded-md bg-text "></div>
+        {/* <div className="hidden md:flex md:w-4 h-full rounded-md bg-text "></div> */}
         <div className=" w-full">
           <h2 className="text-2xl md:text-3xl font-bold">
             From Headstones to HTML
